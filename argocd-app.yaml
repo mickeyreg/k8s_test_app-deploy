@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: k8s-test-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mickeyreg/k8s_test_app-deploy
+    targetRevision: main
+    path: manifest
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: k8s-test-app
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
