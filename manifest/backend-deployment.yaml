@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/mickeyreg/k8s_test_app-backend@
+          image: ghcr.io/mickeyreg/k8s_test_app-backend:sha-dc4f2bfd1543c02b32e3b0c199f34d5801d9c47c
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
