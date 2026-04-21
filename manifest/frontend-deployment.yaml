@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/mickeyreg/k8s_test_app-frontend:sha-316dfce2a96d5a57b1f808982e652ec2bd52c4e6
+          image: ghcr.io/mickeyreg/k8s_test_app-frontend:sha-5b698ffc3ee9b7c6940167ff847ca1b06629751a
           imagePullPolicy: Always
           ports:
             - containerPort: 80
