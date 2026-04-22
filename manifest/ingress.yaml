@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: sec06-sju.mojeprojekty.org
+    - host: sec00-sju.mojeprojekty.org
       http:
         paths:
           - path: /api
