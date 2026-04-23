@@ -16,15 +16,6 @@ spec:
       containers:
         - name: frontend
           image: ghcr.io/mickeyreg/k8s_test_app-frontend:sha-23ec43e430d12848fd7b4ce171bc43e785c9b545
-          command: ["/bin/sh", "-c"]
-          args:
-            - |
-              echo "window.RUNTIME_ENV = {
-                POD_IP: '$POD_IP',
-                NODE_IP: '$NODE_IP',
-                NODE_NAME: '$NODE_NAME'
-              };" > /usr/share/nginx/html/env.js &&
-              nginx -g 'daemon off;'
           imagePullPolicy: Always
           ports:
             - containerPort: 80
@@ -40,6 +31,15 @@ spec:
               port: 80
             initialDelaySeconds: 15
             periodSeconds: 20
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              echo "window.RUNTIME_ENV = {
+                POD_IP: '$POD_IP',
+                NODE_IP: '$NODE_IP',
+                NODE_NAME: '$NODE_NAME'
+              };" > /usr/share/nginx/html/env.js &&
+              nginx -g 'daemon off;'
           env:
             - name: POD_IP
               valueFrom:
