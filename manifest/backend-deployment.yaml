@@ -16,7 +16,7 @@ spec:
       serviceAccountName: backend-sa
       containers:
         - name: backend
-          image: ghcr.io/mickeyreg/k8s_test_app-backend:sha-ddfe19efb8472c4a03fcfc126565863470d22197
+          image: ghcr.io/mickeyreg/k8s_test_app-backend:sha-e339ad74c21581f7d58553f69ec7ff21e728f153
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
