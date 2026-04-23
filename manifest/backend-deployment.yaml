@@ -32,3 +32,12 @@ spec:
               port: 5000
             initialDelaySeconds: 15
             periodSeconds: 20
+          env:
+            - name: NODE_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+            - name: NODE_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.hostIP
