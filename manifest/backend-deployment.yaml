@@ -41,3 +41,5 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: status.hostIP
+            - name: TZ
+              value: "Europe/Warsaw"

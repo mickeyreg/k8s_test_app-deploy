@@ -44,3 +44,5 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: spec.nodeName
+            - name: TZ
+              value: "Europe/Warsaw"
